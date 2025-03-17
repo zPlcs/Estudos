@@ -3,9 +3,7 @@ import { View, Text, Button } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
-function HelloWorld() {
-    const navigation = useNavigation();
-
+function HelloWorld({ navigation }) {
     return (
         <View style={{
             flex: 1,
@@ -21,8 +19,7 @@ function HelloWorld() {
     );
 }
 
-function Patas() {
-    const navigation = useNavigation();
+function Patas({ navigation }) {
     return (
         <View style={{
             flex: 1,
