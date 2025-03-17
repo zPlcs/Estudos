@@ -1,45 +1,52 @@
 import React from 'react'
-import { View, Text, Buttton } from 'react-native'
+import { View, Text, Button } from 'react-native'
+import { NavigationContainer } from '@react-Navigation/native';
+import { createNativeStackNavigator } from '@react-Navigation/native-stack';
 
+export function HelloWorld() {
+    const Navigation = useNavigation();
 
-export function HelloWorld(){
-const navigation: useNavigation();
-
-    return(
-        <View style={{ flex:1,             
-        justifyContent:'center', 
-        alignItems:'center'}}>
+    return (
+        <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}>
             <Text>Hello World!</Text>
             <Button
-            onPress={() => navigation.navigate('Patas')}
+                onPress={() => Navigation.navigate('Patas')}
             />
         </View>
     );
 }
 
-export function Patas(){
-const navigation = useNavigation();
-    return(
-        <View>
+export function Patas() {
+    const Navigation = useNavigation();
+    return (
+        <View style={{
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}>
             <Text>Meu nome é Patrik!</Text>
             <Button
-            onPress={() => navigation.navigate('HelloWorld')}
+                onPress={() => Navigation.navigate('HelloWorld')}
             />
         </View>
     );
 }
 
-export function RootStack(){
-    <Stack.navigation>
-        <Stack.screen name='HelloWorld' component={HelloWorld}/>
-        <Stack.screen name='Patas' component={Patas}
-    </Stack.navigation>
+export function RootStack() {
+    <Stack.Navigation>
+        <Stack.Screen name='HelloWorld' component={HelloWorld} />
+        <Stack.Screen name='Patas' component={Patas} />
+    </Stack.Navigation>
 }
 
 const Stack = createNativeStackNavigator();
 
-export default function App(){
-    return(
+export default function App() {
+    return (
         <NavigationContainer>
             <RootStack />
         </NavigationContainer>
