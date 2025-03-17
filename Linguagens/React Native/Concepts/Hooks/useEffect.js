@@ -12,9 +12,10 @@ useEffect(() => {
     setInterval(() => {
         setNum((prevNum) => prevNum+1);
    },1000);
+
+   return () => clearInterval(interval);
 },[]);
 
-clearInterval();
     return(
         <View>
             <Text>{num}</Text>
