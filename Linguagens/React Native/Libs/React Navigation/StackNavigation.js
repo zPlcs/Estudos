@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, Button } from 'react-native'
-import { NavigationContainer } from '@react-Navigation/native';
-import { createNativeStackNavigator } from '@react-Navigation/native-stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 
-export function HelloWorld() {
-    const Navigation = useNavigation();
+function HelloWorld() {
+    const navigation = useNavigation();
 
     return (
         <View style={{
@@ -14,14 +14,15 @@ export function HelloWorld() {
         }}>
             <Text>Hello World!</Text>
             <Button
-                onPress={() => Navigation.navigate('Patas')}
+                title='Ir para a página do Patas'
+                onPress={() => navigation.navigate('Patas')}
             />
         </View>
     );
 }
 
-export function Patas() {
-    const Navigation = useNavigation();
+function Patas() {
+    const navigation = useNavigation();
     return (
         <View style={{
             flex: 1,
@@ -30,17 +31,20 @@ export function Patas() {
         }}>
             <Text>Meu nome é Patrik!</Text>
             <Button
-                onPress={() => Navigation.navigate('HelloWorld')}
+                title='Ir para a página inicial'
+                onPress={() => navigation.navigate('HelloWorld')}
             />
         </View>
     );
 }
 
-export function RootStack() {
-    <Stack.Navigation>
-        <Stack.Screen name='HelloWorld' component={HelloWorld} />
-        <Stack.Screen name='Patas' component={Patas} />
-    </Stack.Navigation>
+function RootStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name='HelloWorld' component={HelloWorld} />
+            <Stack.Screen name='Patas' component={Patas} />
+        </Stack.Navigator>
+    );
 }
 
 const Stack = createNativeStackNavigator();
