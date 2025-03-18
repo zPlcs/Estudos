@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 
 const Tab = createBottomTabNavigator();
 
-function mainPage(){
+function MainPage(){
 	return(
 		<View>
 			<Text>Página Inicial</Text>
@@ -13,7 +13,7 @@ function mainPage(){
 	);
 }
 
-function profilePage(){
+function ProfilePage(){
 	return(
 		<View>
 			<Text>Página de Perfil</Text>
@@ -24,8 +24,8 @@ function profilePage(){
 function RootStack(){
 	return(
 		<Tab.Navigator>
-			<Tab.Screen name='Página Inicial' component={mainPage} />
-			<Tab.Screen name='Página de Pefil' component={profilePage} />
+			<Tab.Screen name='Página Inicial' component={MainPage} />
+			<Tab.Screen name='Página de Perfil' component={ProfilePage} />
 		</Tab.Navigator>
 	);
 }
