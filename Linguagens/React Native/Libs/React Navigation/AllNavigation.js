@@ -17,7 +17,7 @@ function PaginaPrincipal(){
     );
 }
 
-function PáginaConfiguracoes(){
+function PaginaConfiguracoes(){
     return(
         <View>
             <Text>Página de configurações</Text>
@@ -84,4 +84,23 @@ function RootDrawer(){
     );
 }
 
-//todo
+function RootTab(){
+    return(
+        <Tab.Navigator>
+            <Tab.Screen name='Página Principal' component={PaginaPrincipal} />
+            <Tab.Screen name='Página de Configurações' component={PaginaConfiguracoes} />
+        </Tab.Navigator>
+    );
+}
+
+export default function App(){
+    return(
+        <NavigationContainer>
+            <RootDrawer />
+            <RootStack />
+            <RootTab />
+        </NavigationContainer>
+
+        
+    );
+}
