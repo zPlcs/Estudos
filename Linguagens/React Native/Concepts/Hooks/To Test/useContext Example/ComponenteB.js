@@ -9,7 +9,7 @@ export default function ComponenteB(){
         <View style={{ padding: 20, borderColor: 'black', borderWidth: 2}}>
             <Text>Componente B</Text>
             <Text>{num}</Text>
-            <Button title="Decrement" onPress={(PrevNum) => setNum(PrevNum - 1)}
+            <Button title="Decrement" onPress={(PrevNum) => setNum(PrevNum - 1)} />
         </View>
     );
 }
